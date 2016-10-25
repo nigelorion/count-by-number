@@ -7,20 +7,16 @@ $(document).ready(function(){
     var countedNumbers = [];
     if (errorCheck(countBy, countTo)) {
       countedNumbers = countByNumber(countBy, countTo);
-      console.log(countedNumbers);
       var i = 0;
       var n = countedNumbers.length;
-      setInterval(function() { i++; if (i <= n) { displayCount(countedNumbers[i-1]); console.log(countedNumbers[i-1]); console.log(i); console.log(n); } }, 3000);
-
-    }
+      setInterval(function() { i++; if (i <= n) { displayCount(countedNumbers[i-1]); } }, 1000); }
   });
 });
 
-
 function errorCheck (countBy, countTo) {
-
   var countByNum = parseInt(countBy);
   var countToNum = parseInt(countTo);
+
   if (!countBy){
     alert("Enter a number to count by!");
     return false;
@@ -42,6 +38,7 @@ function countByNumber (countBy, countTo){
   var countByNum = parseInt(countBy);
   var countToNum = parseInt(countTo);
   var countedNumbers = [];
+
   for (i = countByNum; i <= countToNum; i += countByNum) {
     countedNumbers.push(i);
   }
@@ -50,8 +47,5 @@ function countByNumber (countBy, countTo){
 
 function displayCount(displayNum) {
     $(".count h1").text(displayNum);
-    console.log(displayNum);
-    $(".count").fadeIn(800);
-    $(".count").delay(800);
-    $(".count").fadeOut(800);
+    $(".count").fadeIn(200).delay(200).fadeOut(200);
 };
