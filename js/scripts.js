@@ -14,7 +14,7 @@ $(document).ready(function(){
   });
 });
 
-function errorCheck (countBy, countTo) {
+function errorCheck (countBy, countTo, intervalSpeed) {
   var countByNum = parseInt(countBy);
   var countToNum = parseInt(countTo);
 
@@ -30,7 +30,7 @@ function errorCheck (countBy, countTo) {
   } else if (countByNum < 0 || countToNum < 0) {
     alert("Please no negative numbers");
     return false;
-  } else if (isNaN) {
+  } else if (isNaN(countByNum, countToNum, intervalSpeed)) {
     alert("Please enter numbers only");
     return false;
   } else {
