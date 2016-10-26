@@ -30,6 +30,9 @@ function errorCheck (countBy, countTo) {
   } else if (countByNum < 0 || countToNum < 0) {
     alert("Please no negative numbers");
     return false;
+  } else if (isNaN) {
+    alert("Please enter numbers only");
+    return false;
   } else {
     return true;
   }
