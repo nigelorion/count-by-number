@@ -2,6 +2,7 @@ $(document).ready(function(){
   $("form").submit(function(event){
     event.preventDefault();
 
+    var intervalSpeed = parseInt($("#countSpeed").val());
     var countBy = $("#countBy").val();
     var countTo = $("#countTo").val();
     var countedNumbers = [];
@@ -9,7 +10,7 @@ $(document).ready(function(){
       countedNumbers = countByNumber(countBy, countTo);
       var i = 0;
       var n = countedNumbers.length;
-      setInterval(function() { i++; if (i <= n) { displayCount(countedNumbers[i-1]); } }, 1000); }
+      setInterval(function() { i++; if (i <= n) { displayCount(countedNumbers[i-1]); } }, intervalSpeed); }
   });
 });
 
@@ -47,5 +48,6 @@ function countByNumber (countBy, countTo){
 
 function displayCount(displayNum) {
     $(".count h1").text(displayNum);
-    $(".count").fadeIn(200).delay(200).fadeOut(200);
+    // $(".count").fadeIn(1).delay(1).fadeOut(1);
+    $(".count").show();
 };
